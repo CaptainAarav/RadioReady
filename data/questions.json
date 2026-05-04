@@ -1,0 +1,782 @@
+[
+	{
+		"text": "The Licensee must give Ofcom immediate notice of any change of their...",
+		"options": {
+			"A": "Maximum transmit power",
+			"B": "Planning permission",
+			"C": "Number of transmitters",
+			"D": "Name"
+		},
+		"answer": "D",
+		"category": "licence_conditions",
+		"source": "RSGB Mock 3 V1.6 Q1"
+	},
+	{
+		"text": "The station callsign must be transmitted...",
+		"options": {
+			"A": "When the entry is made in the log book",
+			"B": "At the end of each transmission",
+			"C": "Every half hour and when the station is closing down",
+			"D": "At the beginning of a transmission on a new frequency"
+		},
+		"answer": "D",
+		"category": "licence_conditions",
+		"source": "RSGB Mock 3 V1.6 Q2"
+	},
+	{
+		"text": "Except in national or international emergency, the holder of a Foundation Licence may NOT send messages that are...",
+		"options": {
+			"A": "In secret code",
+			"B": "Unrelated to amateur radio",
+			"C": "About his/her equipment",
+			"D": "Of a technical nature"
+		},
+		"answer": "A",
+		"category": "licence_conditions",
+		"source": "RSGB Mock 3 V1.6 Q3"
+	},
+	{
+		"text": "In which of the following are you normally licensed to operate using a Foundation Licence?",
+		"options": {
+			"A": "Northern Ireland",
+			"B": "Sweden",
+			"C": "Norway",
+			"D": "Finland"
+		},
+		"answer": "A",
+		"category": "licence_conditions",
+		"source": "RSGB Mock 3 V1.6 Q4"
+	},
+	{
+		"text": "For the purposes of the EMF requirements in the amateur licence, the description 'General Public' means...",
+		"options": {
+			"A": "Everybody apart from the licence holder in person",
+			"B": "Everybody except those living at that amateur's house",
+			"C": "People outside the amateur's circle of family and friends",
+			"D": "People outside the amateur's family and relatives"
+		},
+		"answer": "A",
+		"category": "licence_conditions",
+		"source": "RSGB Mock 3 V1.6 Q5"
+	},
+	{
+		"text": "You are at your home station talking to an airborne operator on 145.400MHz. What is the maximum permitted power you can use?",
+		"options": {
+			"A": "500mW EIRP",
+			"B": "25W",
+			"C": "50W",
+			"D": "100W"
+		},
+		"answer": "B",
+		"category": "licence_conditions",
+		"source": "RSGB Mock 3 V1.6 Q6"
+	},
+	{
+		"text": "A cell is used to store...",
+		"options": {
+			"A": "Current",
+			"B": "Voltage",
+			"C": "Resistance",
+			"D": "Energy"
+		},
+		"answer": "D",
+		"category": "technical",
+		"source": "RSGB Mock 3 V1.6 Q7"
+	},
+	{
+		"text": "Processing of audio and radio frequency signals by software requires the signal presented to the processor...",
+		"options": {
+			"A": "To be an analogue signal only",
+			"B": "To be a digital signal only",
+			"C": "Can be either analogue or digital",
+			"D": "To be continuously variable in level"
+		},
+		"answer": "B",
+		"category": "technical",
+		"source": "RSGB Mock 3 V1.6 Q8"
+	},
+	{
+		"text": "Demodulation is the process of...",
+		"options": {
+			"A": "Removing unwanted radio signals nearby in frequency",
+			"B": "Extracting the information sent by the transmitter",
+			"C": "Tuning in to the wanted radio signal",
+			"D": "Ensuring the transmitter and receiver are on the same frequency"
+		},
+		"answer": "B",
+		"category": "technical",
+		"source": "RSGB Mock 3 V1.6 Q10"
+	},
+	{
+		"text": "Correct adjustment of the microphone gain control is necessary to...",
+		"options": {
+			"A": "Avoid the risk of over-modulation or over-deviation",
+			"B": "Ensure the tone is correct at the receiving station",
+			"C": "Avoid the risk of damage to the power amplifier stage",
+			"D": "Minimise the frequency drift of the transmitter"
+		},
+		"answer": "A",
+		"category": "technical",
+		"source": "RSGB Mock 3 V1.6 Q11"
+	},
+	{
+		"text": "Which suffix is used to indicate that the antenna is referenced to an ideal antenna which radiates equally in all directions?",
+		"options": {
+			"A": "PEP",
+			"B": "ERP",
+			"C": "EIRP",
+			"D": "dBd"
+		},
+		"answer": "C",
+		"category": "eirp",
+		"source": "RSGB Mock 3 V1.6 Q13"
+	},
+	{
+		"text": "A balun is...",
+		"options": {
+			"A": "Used to prevent RF entering mains cable",
+			"B": "Used to connect between a balanced antenna and unbalanced feeder",
+			"C": "A type of dummy load",
+			"D": "A connector"
+		},
+		"answer": "B",
+		"category": "technical",
+		"source": "RSGB Mock 3 V1.6 Q14"
+	},
+	{
+		"text": "An antenna and low loss feeder show a reasonable VSWR. The antenna is then removed. The VSWR will...",
+		"options": {
+			"A": "Reduce",
+			"B": "Remain unchanged",
+			"C": "Increase slightly",
+			"D": "Increase considerably"
+		},
+		"answer": "D",
+		"category": "technical",
+		"source": "RSGB Mock 3 V1.6 Q15"
+	},
+	{
+		"text": "A difference between HF and VHF/UHF propagation is that...",
+		"options": {
+			"A": "VHF and UHF waves generally travel faster than HF waves",
+			"B": "A hill will cause a shadow with HF but not with VHF or UHF",
+			"C": "HF radio waves can have a shorter wavelength than some VHF or UHF waves",
+			"D": "A hill will cause a shadow with VHF or UHF but not with HF"
+		},
+		"answer": "D",
+		"category": "propagation",
+		"source": "RSGB Mock 3 V1.6 Q16"
+	},
+	{
+		"text": "Radio waves will change direction if...",
+		"options": {
+			"A": "There is a high SWR in the feeder",
+			"B": "They are diffracted or reflected",
+			"C": "They are not modulated",
+			"D": "The antenna is mounted vertically"
+		},
+		"answer": "B",
+		"category": "propagation",
+		"source": "RSGB Mock 3 V1.6 Q17"
+	},
+	{
+		"text": "A neighbour's TV is suffering interference. The first action should be to...",
+		"options": {
+			"A": "Discuss the situation with the neighbour and offer help in tracking down the problem",
+			"B": "Close down the station and return the amateur radio licence",
+			"C": "Deny all responsibility as the station is not operated during TV hours",
+			"D": "Request the neighbour to get in touch with Ofcom"
+		},
+		"answer": "A",
+		"category": "emc",
+		"source": "RSGB Mock 3 V1.6 Q18"
+	},
+	{
+		"text": "Which mode of transmission is the WORST for causing EMC problems?",
+		"options": {
+			"A": "FM",
+			"B": "CW",
+			"C": "SSB",
+			"D": "Data modes"
+		},
+		"answer": "C",
+		"category": "emc",
+		"source": "RSGB Mock 3 V1.6 Q19"
+	},
+	{
+		"text": "Which item below is most likely to suffer interference from an amateur transmission?",
+		"options": {
+			"A": "A battery powered digital clock",
+			"B": "A microwave oven",
+			"C": "A hair dryer",
+			"D": "A radio or television"
+		},
+		"answer": "D",
+		"category": "emc",
+		"source": "RSGB Mock 3 V1.6 Q20"
+	},
+	{
+		"text": "A log should record details of the...",
+		"options": {
+			"A": "Equipment used to transmit and receive and QSL details",
+			"B": "Date, time, frequency or band, mode, callsign of station contacted",
+			"C": "Times of first and last contacts for that day",
+			"D": "Names, locations and equipment used by the amateurs you contact"
+		},
+		"answer": "B",
+		"category": "operating_practice",
+		"source": "RSGB Mock 3 V1.6 Q21"
+	},
+	{
+		"text": "Repeaters are used mainly to...",
+		"options": {
+			"A": "Allow neighbouring countries to be in-range for fixed stations",
+			"B": "Enable mobile stations to communicate over greater distances",
+			"C": "Give updates on weather and traffic on motorways",
+			"D": "Give emergency users a priority channel"
+		},
+		"answer": "B",
+		"category": "operating_practice",
+		"source": "RSGB Mock 3 V1.6 Q22"
+	},
+	{
+		"text": "The best RST report of a Morse signal is...",
+		"options": {
+			"A": "559",
+			"B": "111",
+			"C": "555",
+			"D": "599"
+		},
+		"answer": "D",
+		"category": "operating_practice",
+		"source": "RSGB Mock 3 V1.6 Q23"
+	},
+	{
+		"text": "Lithium batteries in particular can...",
+		"options": {
+			"A": "Leak a corrosive fluid unless stored upright and out of the sun",
+			"B": "Be used with any available charger provided it is the correct voltage",
+			"C": "Be recharged indefinitely and do not need replacing if properly treated",
+			"D": "Catch fire or explode if they are not properly used or charged"
+		},
+		"answer": "D",
+		"category": "safety",
+		"source": "RSGB Mock 3 V1.6 Q24"
+	},
+	{
+		"text": "Using a tool belt when working at heights will...",
+		"options": {
+			"A": "Minimise the chance of dropping things",
+			"B": "Allow two hands to be used to complete the work",
+			"C": "Avoid the need to wear hard hats",
+			"D": "Ensure repeated trips up and down the ladder"
+		},
+		"answer": "A",
+		"category": "safety",
+		"source": "RSGB Mock 3 V1.6 Q25"
+	},
+	{
+		"text": "A transmitting antenna should...",
+		"options": {
+			"A": "Not be touched",
+			"B": "Be vertically polarised",
+			"C": "Be larger than a receiving antenna for the same band",
+			"D": "Be of high resistance material"
+		},
+		"answer": "A",
+		"category": "safety",
+		"source": "RSGB Mock 3 V1.6 Q26"
+	},
+	{
+		"text": "An Amateur Radio Licensee may use the station for...",
+		"options": {
+			"A": "Self-training in communication by wireless telegraphy",
+			"B": "Broadcasting messages for reception by un-licenced listeners",
+			"C": "The licensee's personal business interests",
+			"D": "Transmitting recorded music for reception by institutions such as hospitals"
+		},
+		"answer": "A",
+		"category": "licence_conditions",
+		"source": "RSGB Mock 1 V1.6b Q1"
+	},
+	{
+		"text": "To correctly identify your station in accordance with your licence you MUST state...",
+		"options": {
+			"A": "Your name and the callsign of the station you are using",
+			"B": "Your callsign and then the callsign of the station you are in contact with",
+			"C": "Your callsign in voice or the mode of transmission you are using",
+			"D": "The callsign of the station you are in contact with and then your callsign"
+		},
+		"answer": "C",
+		"category": "licence_conditions",
+		"source": "RSGB Mock 1 V1.6b Q2"
+	},
+	{
+		"text": "A member of a User Service wishes to pass a message using your radio equipment to support operations. This is...",
+		"options": {
+			"A": "Only acceptable in times of emergency",
+			"B": "Not acceptable unless the member is a licenced amateur",
+			"C": "Not acceptable",
+			"D": "Acceptable"
+		},
+		"answer": "D",
+		"category": "licence_conditions",
+		"source": "RSGB Mock 1 V1.6b Q3"
+	},
+	{
+		"text": "The holder of an Amateur Radio Licence may be told to close down and cease to operate the station when...",
+		"options": {
+			"A": "The station has not been on the air for 6 months",
+			"B": "The station has not been on the air for 3 months",
+			"C": "Operation has only been mobile",
+			"D": "The licensee is in breach of the licence"
+		},
+		"answer": "D",
+		"category": "licence_conditions",
+		"source": "RSGB Mock 1 V1.6b Q4"
+	},
+	{
+		"text": "The EMF requirements in the amateur licence are there to...",
+		"options": {
+			"A": "Limit the exposure of people to RF radiation",
+			"B": "Avoid other electronic equipment suffering interference",
+			"C": "Set the permitted power limits at each licence level",
+			"D": "Minimise RF pickup in overhead telephone wires"
+		},
+		"answer": "A",
+		"category": "licence_conditions",
+		"source": "RSGB Mock 1 V1.6b Q5"
+	},
+	{
+		"text": "Which one of the following is an electrical insulator?",
+		"options": {
+			"A": "Copper",
+			"B": "Gold",
+			"C": "Silver",
+			"D": "Ceramic"
+		},
+		"answer": "D",
+		"category": "technical",
+		"source": "RSGB Mock 1 V1.6b Q7"
+	},
+	{
+		"text": "What wavelength corresponds to the 14MHz band?",
+		"options": {
+			"A": "50 metres",
+			"B": "20 metres",
+			"C": "0.6 metres",
+			"D": "40 metres"
+		},
+		"answer": "B",
+		"category": "band_plan",
+		"source": "RSGB Mock 1 V1.6b Q8"
+	},
+	{
+		"text": "Modulation is the process of...",
+		"options": {
+			"A": "Ensuring the transmitter is on the same frequency as the distant receiver",
+			"B": "Adding the data or voice to be transmitted to the radio frequency carrier",
+			"C": "Extracting the transmitted data from the radio frequency carrier",
+			"D": "Ensuring the transmitter is on the same frequency as the local receiver"
+		},
+		"answer": "B",
+		"category": "technical",
+		"source": "RSGB Mock 1 V1.6b Q10"
+	},
+	{
+		"text": "In a software defined radio (SDR) receiver, the required signal is selected using...",
+		"options": {
+			"A": "A low pass filter",
+			"B": "An anti-alias filter",
+			"C": "A filter defined in software",
+			"D": "A diode detector"
+		},
+		"answer": "C",
+		"category": "technical",
+		"source": "RSGB Mock 1 V1.6b Q12"
+	},
+	{
+		"text": "10W EIRP is the same radiating power as...",
+		"options": {
+			"A": "6.1W ERP",
+			"B": "6.1W PEP",
+			"C": "10W ERP",
+			"D": "10W PEP"
+		},
+		"answer": "A",
+		"category": "eirp",
+		"source": "RSGB Mock 1 V1.6b Q14"
+	},
+	{
+		"text": "Which type of cable is fitted to a PL259 plug?",
+		"options": {
+			"A": "Two core AC mains",
+			"B": "300 ohm ribbon",
+			"C": "Three core AC mains",
+			"D": "50 ohm coaxial"
+		},
+		"answer": "D",
+		"category": "technical",
+		"source": "RSGB Mock 1 V1.6b Q15"
+	},
+	{
+		"text": "The layers of conductive gases between 70 and 400km in height are known as the...",
+		"options": {
+			"A": "Troposphere",
+			"B": "Solarsphere",
+			"C": "Ionosphere",
+			"D": "Mesosphere"
+		},
+		"answer": "C",
+		"category": "propagation",
+		"source": "RSGB Mock 1 V1.6b Q16"
+	},
+	{
+		"text": "Which action will be most effective in extending the range for transmitting and receiving VHF or UHF signals?",
+		"options": {
+			"A": "Increasing the height of the antenna",
+			"B": "Using UHF rather than VHF",
+			"C": "Using an indoor antenna",
+			"D": "Increasing the transmitter power"
+		},
+		"answer": "A",
+		"category": "propagation",
+		"source": "RSGB Mock 1 V1.6b Q17"
+	},
+	{
+		"text": "Which item is most likely to be affected by a local radio transmission?",
+		"options": {
+			"A": "An electric bell",
+			"B": "An electronic calculator",
+			"C": "A domestic radio receiver",
+			"D": "An electric fire"
+		},
+		"answer": "C",
+		"category": "emc",
+		"source": "RSGB Mock 1 V1.6b Q18"
+	},
+	{
+		"text": "Amateur transmissions might be picked up by...",
+		"options": {
+			"A": "Only wiring that does not have an earth lead",
+			"B": "Only wiring which is longer than 2 metres",
+			"C": "Earth leads only",
+			"D": "Any nearby electrical wiring"
+		},
+		"answer": "D",
+		"category": "emc",
+		"source": "RSGB Mock 1 V1.6b Q19"
+	},
+	{
+		"text": "It is proving difficult to determine how an amateur transmission is interfering with a neighbour's television. The amateur should try seeking help from the...",
+		"options": {
+			"A": "Radio Society of Great Britain",
+			"B": "British Telecommunications",
+			"C": "Planning Department of the local council",
+			"D": "Radio Licensing Centre"
+		},
+		"answer": "A",
+		"category": "emc",
+		"source": "RSGB Mock 1 V1.6b Q20"
+	},
+	{
+		"text": "The main reason for listening on the frequency before making a CQ call or starting a conversation is...",
+		"options": {
+			"A": "Because the station you are calling might be calling you",
+			"B": "To make sure the station you are contacting is listening on that frequency",
+			"C": "To allow your transmitter to settle properly on the chosen frequency",
+			"D": "To ensure your transmission will not upset other transmissions"
+		},
+		"answer": "D",
+		"category": "operating_practice",
+		"source": "RSGB Mock 1 V1.6b Q21"
+	},
+	{
+		"text": "According to the band plan, what is the 2 metre band FM calling frequency?",
+		"options": {
+			"A": "144.500MHz",
+			"B": "144.300MHz",
+			"C": "145.500MHz",
+			"D": "144.700MHz"
+		},
+		"answer": "C",
+		"category": "band_plan",
+		"source": "RSGB Mock 1 V1.6b Q22"
+	},
+	{
+		"text": "Getting an amateur friend to comment on your transmitted audio when using a new microphone is necessary because...",
+		"options": {
+			"A": "The tone controls might need adjusting",
+			"B": "The microphone could be tuned to the wrong frequency",
+			"C": "Not all microphones are suitably fused",
+			"D": "The microphone gain on the transmitter may need to be re-adjusted"
+		},
+		"answer": "D",
+		"category": "operating_practice",
+		"source": "RSGB Mock 1 V1.6b Q23"
+	},
+	{
+		"text": "A fuse is formed from...",
+		"options": {
+			"A": "A coil of wire",
+			"B": "A metal strip designed to melt at a specific current",
+			"C": "A junction of two different types of silicon material",
+			"D": "Two metal plates separated by an insulator"
+		},
+		"answer": "B",
+		"category": "safety",
+		"source": "RSGB Mock 1 V1.6b Q24"
+	},
+	{
+		"text": "Protective goggles should be worn when drilling in order to...",
+		"options": {
+			"A": "Hold glasses (if worn) securely",
+			"B": "Allow closer inspection of the work",
+			"C": "Prevent swarf entering your eyes",
+			"D": "Allow greater drill speeds"
+		},
+		"answer": "C",
+		"category": "safety",
+		"source": "RSGB Mock 1 V1.6b Q25"
+	},
+	{
+		"text": "At an open day hosted by your radio club, who is responsible for the safety of those attending?",
+		"options": {
+			"A": "Everybody present",
+			"B": "The RSGB",
+			"C": "Ofcom",
+			"D": "The police"
+		},
+		"answer": "A",
+		"category": "safety",
+		"source": "RSGB Mock 1 V1.6b Q26"
+	},
+	{
+		"text": "The Regional Secondary Locator W in the prefix of an amateur callsign, if used, refers to...",
+		"options": {
+			"A": "Northern Ireland",
+			"B": "England",
+			"C": "Wales",
+			"D": "Scotland"
+		},
+		"answer": "C",
+		"category": "licence_conditions",
+		"source": "RSGB Mock 2 V1.6 Q1"
+	},
+	{
+		"text": "Apart from a CQ call, the amateur licence does not permit...",
+		"options": {
+			"A": "Talking about a programme heard on the BBC",
+			"B": "Transmitting to anybody who happens to be listening",
+			"C": "Allowing other people to overhear your transmissions",
+			"D": "Transmitting to more than one person"
+		},
+		"answer": "B",
+		"category": "licence_conditions",
+		"source": "RSGB Mock 2 V1.6 Q3"
+	},
+	{
+		"text": "What is the radiated power level above which an EMF assessment must be carried out?",
+		"options": {
+			"A": "1W EIRP",
+			"B": "1W ERP",
+			"C": "10W EIRP",
+			"D": "10W ERP"
+		},
+		"answer": "C",
+		"category": "licence_conditions",
+		"source": "RSGB Mock 2 V1.6 Q5"
+	},
+	{
+		"text": "What is the status of the UK amateur satellite service on 430.5MHz?",
+		"options": {
+			"A": "Not allocated",
+			"B": "Primary",
+			"C": "Primary shared",
+			"D": "Secondary"
+		},
+		"answer": "A",
+		"category": "band_plan",
+		"source": "RSGB Mock 2 V1.6 Q6"
+	},
+	{
+		"text": "The unit of frequency is the...",
+		"options": {
+			"A": "Hertz",
+			"B": "Amp",
+			"C": "Watt",
+			"D": "Volt"
+		},
+		"answer": "A",
+		"category": "technical",
+		"source": "RSGB Mock 2 V1.6 Q8"
+	},
+	{
+		"text": "A device labelled 'DAC' in a radio's electronics will...",
+		"options": {
+			"A": "Amplify the digital signal to a suitable level for headphones",
+			"B": "Process the data stream into regular samples for storing in memory",
+			"C": "Catalogue data signals and display the frequency the radio is tuned to",
+			"D": "Take a digital signal from the radio's memory and turn it into an analogue signal"
+		},
+		"answer": "D",
+		"category": "technical",
+		"source": "RSGB Mock 2 V1.6 Q9"
+	},
+	{
+		"text": "When an audio frequency is mixed with a radio frequency, which one of the following is produced?",
+		"options": {
+			"A": "Carrier wave",
+			"B": "A direct current",
+			"C": "Harmonics",
+			"D": "Sidebands"
+		},
+		"answer": "D",
+		"category": "technical",
+		"source": "RSGB Mock 2 V1.6 Q10"
+	},
+	{
+		"text": "A poorly designed frequency generator stage in a transmitter may...",
+		"options": {
+			"A": "Risk damaging the antenna",
+			"B": "Damage the power supply",
+			"C": "Cause the transmitter to radiate outside the amateur bands",
+			"D": "Risk damage to the audio stage or the microphone"
+		},
+		"answer": "C",
+		"category": "technical",
+		"source": "RSGB Mock 2 V1.6 Q11"
+	},
+	{
+		"text": "An antenna will...",
+		"options": {
+			"A": "Pick up radio signals and convert them into electrical signals",
+			"B": "Provide an RF earth",
+			"C": "Work equally well at all frequencies",
+			"D": "Reflect radio waves away from the transmitter"
+		},
+		"answer": "A",
+		"category": "technical",
+		"source": "RSGB Mock 2 V1.6 Q14"
+	},
+	{
+		"text": "Damage to an antenna will be most evident inside the station on the...",
+		"options": {
+			"A": "Transmitter frequency display",
+			"B": "Transmitter output meter",
+			"C": "Standing wave ratio meter",
+			"D": "Power supply voltmeter"
+		},
+		"answer": "C",
+		"category": "technical",
+		"source": "RSGB Mock 2 V1.6 Q15"
+	},
+	{
+		"text": "A radio amateur is operating on 145.5MHz. Which of the items in the shack is most likely to suffer interference?",
+		"options": {
+			"A": "An HF receiver on 14.1MHz",
+			"B": "An electric digital clock",
+			"C": "A computer",
+			"D": "A VHF receiver on 144.25MHz"
+		},
+		"answer": "D",
+		"category": "emc",
+		"source": "RSGB Mock 2 V1.6 Q18"
+	},
+	{
+		"text": "Clicks and a buzz on a mobile receiver in a vehicle can be due to...",
+		"options": {
+			"A": "Locating the antenna in an exposed location on the roof",
+			"B": "The use of battery power rather than mains power",
+			"C": "Battery charging and vehicle ignition systems",
+			"D": "The lack of an actual earth lead to divert the electrical noise"
+		},
+		"answer": "C",
+		"category": "emc",
+		"source": "RSGB Mock 2 V1.6 Q19"
+	},
+	{
+		"text": "The station log will be of assistance in tracing the cause of an interference problem experienced by a neighbour, because...",
+		"options": {
+			"A": "The licence requires you to keep a log of your transmissions",
+			"B": "The station you contacted might be the source of the interference",
+			"C": "It will be useful to compare the times of the interference with the times of transmission",
+			"D": "The local authority will want a copy of your log in order to deal with the complaint"
+		},
+		"answer": "C",
+		"category": "emc",
+		"source": "RSGB Mock 2 V1.6 Q20"
+	},
+	{
+		"text": "When you are calling CQ on 145.500MHz and another station replies, you should...",
+		"options": {
+			"A": "Remain on this frequency",
+			"B": "State your name and location",
+			"C": "Exchange signal reports",
+			"D": "Arrange to move to a clear channel"
+		},
+		"answer": "D",
+		"category": "operating_practice",
+		"source": "RSGB Mock 2 V1.6 Q21"
+	},
+	{
+		"text": "Operating just above the 2 metre amateur band (144.0-146.0MHz) is not legal and may interfere with...",
+		"options": {
+			"A": "Broadcasting",
+			"B": "Radio astronomy",
+			"C": "Space operations",
+			"D": "Mobile (except aeronautical mobile)"
+		},
+		"answer": "D",
+		"category": "band_plan",
+		"source": "RSGB Mock 2 V1.6 Q22"
+	},
+	{
+		"text": "When borrowing or lending a digital voice (DV) radio you must...",
+		"options": {
+			"A": "Use the original owner's callsign but say who is actually using the radio",
+			"B": "Re-register the radio with the RSGB or local digital repeater group",
+			"C": "Ensure the embedded digital callsign is changed to the callsign of the actual user",
+			"D": "Remember to give your callsign in voice to override the embedded details"
+		},
+		"answer": "C",
+		"category": "operating_practice",
+		"source": "RSGB Mock 2 V1.6 Q23"
+	},
+	{
+		"text": "When checking mains equipment, it is necessary to...",
+		"options": {
+			"A": "Use only non-magnetic tools",
+			"B": "Disconnect the unit from the mains supply",
+			"C": "Remove the earth wire from the mains plug",
+			"D": "Remove the earth wire from the equipment"
+		},
+		"answer": "B",
+		"category": "safety",
+		"source": "RSGB Mock 2 V1.6 Q24"
+	},
+	{
+		"text": "When using a ladder to erect a new antenna, you should set it at the correct angle of...",
+		"options": {
+			"A": "Only use a wooden ladder",
+			"B": "Ensure that you are the only person in the area",
+			"C": "Set the ladder at the correct angle (1 up to 4 out)",
+			"D": "Set the ladder at the correct angle (1 out to 4 up)"
+		},
+		"answer": "D",
+		"category": "safety",
+		"source": "RSGB Mock 2 V1.6 Q25"
+	},
+	{
+		"text": "The ICNIRP is of interest to amateurs because it...",
+		"options": {
+			"A": "Produces guidance on the safe levels of RF exposure",
+			"B": "Co-ordinates the launch of amateur and other satellites",
+			"C": "Produces the International version of the Amateur Band Plans",
+			"D": "Oversees the preparation of the International Radio Regulations"
+		},
+		"answer": "A",
+		"category": "safety",
+		"source": "RSGB Mock 2 V1.6 Q26"
+	}
+]
