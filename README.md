@@ -1,4 +1,4 @@
-# 📻 RadioReady
+# RadioReady
 
 A Discord bot to help you study for your UK Amateur Radio Foundation licence exam.
 
@@ -8,8 +8,8 @@ Quiz yourself on band plans, licence conditions, EMC, propagation, safety, and m
 
 ## Features
 
-- 🎯 `/quiz` — Take a quiz with a configurable number of questions, answered via interactive buttons
-- 🏓 `/ping` — Check the bot's latency
+- `/quiz` — Take a quiz with a configurable number of questions, answered via interactive buttons
+- `/ping` — Check the bot's latency
 - Questions sourced directly from official RSGB Foundation mock exam papers (Syllabus V1.6, September 2024)
 - Score tracking and leaderboard *(coming soon)*
 - Q-code and band plan lookup commands *(coming soon)*
@@ -64,8 +64,8 @@ ham-radio-bot/
 ├── cogs/
 │   └── quiz.py        # Quiz command and logic
 ├── data/
-│   └── questions.json # Question bank (RSGB V1.6)
-├── main.py            # Bot entry point
+│   └── questions.json # JSON for all questions (RSGB V1.6)
+├── main.py            # Initialisation of the Bot
 ├── requirements.txt
 ├── Dockerfile
 └── docker-compose.yml
@@ -92,11 +92,11 @@ Categories covered:
 
 ## Contributing
 
-Pull requests are welcome! If you want to contribute — whether that's adding questions, fixing bugs, or building new features — open a PR and I'll review it. If it gets accepted, your name will be added to the contributors list below.
+Pull requests are welcome! If you want to contribute — whether that's adding questions, fixing bugs, or building new features, open a PR and I'll review it. If it gets accepted, your name will be added to the contributors list below.
 
 ### Contributors
 
-*No contributors yet — be the first!*
+*No contributors yet*
 
 ---
 
@@ -106,4 +106,4 @@ MIT
 
 ---
 
-> Built by [CaptainAarav](https://github.com/CaptainAarav) — M7 (pending)
+> Built by [Aarav Sahni](https://github.com/CaptainAarav) — M7 (pending)

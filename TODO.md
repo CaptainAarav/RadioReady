@@ -14,10 +14,10 @@
 - [✅] Write at least 30 questions covering: band plans, Q-codes, EIRP/ERP limits, callsign rules, operating practices
 
 ## Phase 3: Core Bot
-- [ ] Create `main.py` and connect the bot to Discord
-- [ ] Load question bank from `questions.json` on startup
-- [ ] Build `/quiz` slash command — sends a random question with A/B/C/D buttons
-- [ ] Handle button interactions — tell the user if they're right or wrong
+- [✅] Create `main.py` and connect the bot to Discord
+- [✅] Load question bank from `questions.json` on startup
+- [✅] Build `/quiz` slash command — sends a random question with A/B/C/D buttons
+- [✅] Handle button interactions — tell the user if they're right or wrong
 - [ ] Build `/bandplan` slash command — look up a band by name (e.g. `/bandplan 2m`)
 - [ ] Build `/qcode` slash command — explain a Q-code (e.g. `/qcode QRM`)
 
