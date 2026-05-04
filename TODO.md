@@ -10,8 +10,8 @@
 
 ## Phase 2: Question Bank
 - [✅] Create `questions.json`
-- [ ] Structure each question with: text, options (A–D), answer, category
-- [ ] Write at least 30 questions covering: band plans, Q-codes, EIRP/ERP limits, callsign rules, operating practices
+- [✅] Structure each question with: text, options (A–D), answer, category
+- [✅] Write at least 30 questions covering: band plans, Q-codes, EIRP/ERP limits, callsign rules, operating practices
 
 ## Phase 3: Core Bot
 - [ ] Create `main.py` and connect the bot to Discord
