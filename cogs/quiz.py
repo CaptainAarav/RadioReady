@@ -21,8 +21,6 @@ class QuizView(disnake.ui.View):
     async def button_c(self, button: disnake.ui.Button, inter: disnake.MessageInteraction):
         await self.check_answer("C", inter)
         
-        
-
     async def check_answer(self, chosen: str, inter: disnake.MessageInteraction):
         if self.answered:
             return
