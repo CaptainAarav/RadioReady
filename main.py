@@ -2,6 +2,8 @@ import os
 from dotenv import load_dotenv
 import disnake
 from disnake.ext import commands
+from tortoise import Tortoise
+
 
 load_dotenv()
 
@@ -10,7 +12,12 @@ bot = commands.Bot(test_guilds=[1500567010734772316])
 
 @bot.event
 async def on_ready():
-	print("Bot is ready!")
+    await Tortoise.init(
+		db_url="sqlite://db.sqlite3",
+		modules={"models": ["models"]}
+	)
+    await Tortoise.generate_schemas()
+    print("Bot is ready!")
 
 @bot.slash_command(name="ping", description="pings the bot and checks weather it's responding")
 async def ping(inter: disnake.ApplicationCommandInteraction):

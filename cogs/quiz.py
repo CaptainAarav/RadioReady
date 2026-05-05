@@ -2,6 +2,7 @@ import disnake
 from disnake.ext import commands
 import json
 import random
+from models import User
 
 class QuizView(disnake.ui.View):
     def __init__(self, question: dict):
