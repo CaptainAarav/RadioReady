@@ -18,12 +18,12 @@ class UserCommands(commands.Cog):
         remaining = 0
         
         if user.correct_answers < 50:
-            progress = (user.correct_answers / 50) * 100
+            progress = int((user.correct_answers / 50) * 100)
             filled = int(user.correct_answers / 50 * 20)
             remaining = 50 - user.correct_answers
             rank = "foundation"
         elif user.correct_answers > 49 and user.correct_answers < 100:
-            progress = (user.correct_answers / 50) * 100
+            progress = int((user.correct_answers / 50) * 100)
             filled = int(user.correct_answers / 100 * 20)
             remaining = 50 - user.correct_answers
             rank = "intermediate"
@@ -33,17 +33,12 @@ class UserCommands(commands.Cog):
             remaining = "no"
             rank = "full"
             
-        progressBar = "█" * filled + "░" * filled - 20
+        progressBar = ("█" * filled) + ("░" * (20 - filled))
         
-        description = f"""Quizzes Done: **{user.total_quizzes}** 
-        \n\n
-        Correct Answers: **{user.correct_answers}** 
-        \n\n 
-        Decibels: **{user.db_points}** 
-        \n\n
-        Rank: **{rank}**, you have to do {remaining} more to get to the next rank!
-        \n
-        {progressBar} {progress}%"""
+        description = f"\n\n Quizzes Done: **{user.total_quizzes}** \n\n Correct Answers: **{user.correct_answers}** \n\n Decibels: **{user.db_points}** \n\n Rank: **{rank}**, you have to do {remaining} more to get to the next rank! \n\n {progressBar} {progress}%"
+        
+        #epsteins favorite number
+        #00685
         
         embed = disnake.Embed(
 			title=f"**📊 Your Stats {inter.author}**",
