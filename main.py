@@ -8,7 +8,7 @@ from tortoise import Tortoise
 load_dotenv()
 
 TOKEN = os.getenv("TOKEN")
-bot = commands.Bot(test_guilds=[1500567010734772316])
+bot = commands.InteractionBot(test_guilds=[1500567010734772316])
 
 @bot.event
 async def on_ready():
@@ -23,6 +23,7 @@ async def on_ready():
 async def ping(inter: disnake.ApplicationCommandInteraction):
 	await inter.response.send_message(f"{inter.author.mention}, Pong!")
  
-bot.load_extension("cogs.quiz") 
+bot.load_extension("cogs.quiz")
+bot.load_extension("cogs.user")
 
 bot.run(TOKEN)
