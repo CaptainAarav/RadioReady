@@ -51,6 +51,7 @@ class Quiz(commands.Cog):
 
     @commands.slash_command(name="quiz", description="Take a quiz and test your knowledge and collect points! PS: You have 30s for each question.")
     async def quiz(self, inter: disnake.ApplicationCommandInteraction, number_of_questions: int = 5):
+        user, _ = await User.get_or_create(discord_id = inter.author.id)
         total_score = 0
         results = []
 
@@ -97,8 +98,10 @@ class Quiz(commands.Cog):
                 "chosen": view.chosen,
                 "correct": view.score == 1
             })
+            
+        passed = total_score >= number_of_questions * 0.73
 
-        desc = f"You scored **{total_score}/{number_of_questions}**\n\n"
+        desc = f"You scored **{total_score}/{number_of_questions}** You got {"**100 Decibels!**" if passed else ""}\n\n"
         for r in results:
             emoji = "✅" if r["correct"] else "❌"
             desc += f"{emoji} {r['question']['text'][:60]}...\n"
@@ -106,11 +109,18 @@ class Quiz(commands.Cog):
             if not r["correct"]:
                 desc += f"　✔️ Correct: **{r['question']['answer']}**"
             desc += "\n\n"
+            
+        user.correct_answers += total_score
+        user.total_quizzes += 1
+        if passed:
+            user.db_points += 100
+        
+        await user.save()
 
         summary_embed = disnake.Embed(
-            title=f"📊 {inter.author.display_name}'s Results",
-            description=desc,
-            color=disnake.Color.green() if total_score >= number_of_questions * 0.73 else disnake.Color.red()
+            title = f"📊 {inter.author.display_name}'s Results",
+            description = desc,
+            color = disnake.Color.green() if total_score >= number_of_questions * 0.73 else disnake.Color.red()
         )
 
         summary_embed.set_author(
