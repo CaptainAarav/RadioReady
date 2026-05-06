@@ -33,7 +33,7 @@ class UserCommands(commands.Cog):
             remaining = "no"
             rank = "full"
             
-        progressBar = "█" * progress + "░" * progress - 20
+        progressBar = "█" * filled + "░" * filled - 20
         
         description = f"""Quizzes Done: **{user.total_quizzes}** 
         \n\n
