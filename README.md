@@ -18,7 +18,7 @@ Quiz yourself on band plans, licence conditions, EMC, propagation, safety, and m
 
 ## Tech Stack
 
-- Python 3.11
+- Python 3.13-slim(we use slim so that you don't have to use the full python image when building in docker)
 - [disnake](https://docs.disnake.dev/) — Discord API wrapper
 - Docker + Docker Compose
 - Hosted on a Raspberry Pi 4B
