@@ -17,7 +17,7 @@ class UserCommands(commands.Cog):
     
     @commands.slash_command(name="my_stats", description="View your own user stats.")
     async def my_stats(self, inter: disnake.ApplicationCommandInteraction):
-        now = datetime.now()
+        now = datetime.now()    
         user, _ = await User.get_or_create(discord_id = inter.author.id)
         
         rank, progress, filled, remaining = self.get_rank(user.correct_answers)
@@ -66,7 +66,7 @@ class UserCommands(commands.Cog):
         embed.set_author(
 			name="RadioReady",
 			url="https://github.com/CaptainAarav/RadioReady"
-		)
+		)  
         
         embed.set_footer(text=f"Stats based of data at {now.strftime("%d/%m/%Y %H:%M")}")
         
@@ -123,7 +123,7 @@ class UserCommands(commands.Cog):
             
             embed = disnake.Embed(
                 title=f"**Gave {amount} decibels to {other_person.name}**",
-                description=f"You succesfully gave {amount} to {other_person.name}, you now have **{user_balance}** decibels remaining",
+                description=f"You succesfully gave {amount} to {other_person.name}, you now have **{user.db_points}** decibels remaining",
                 color=disnake.Color.green()
             )
             
@@ -150,8 +150,13 @@ class UserCommands(commands.Cog):
             embed.set_footer(text=f"{now.strftime("%d/%m/%Y %H:%M")}")
             
             await inter.response.send_message(embed=embed)
-        
-        
+            
+    @commands.slash_command(name="leaderboard", description="See top 5 people with decibels.")
+    async def leaderboard(self, inter: disnake.ApplicationCommandInteraction):
+        now = datetime.now()
+        top_five = User.all().order_by("-db_points").limit(5)
+        print(top_five)
+        await inter.response.send_message(top_five)
         
 def setup(bot):
     bot.add_cog(UserCommands(bot))
