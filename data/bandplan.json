@@ -1,0 +1,114 @@
+{
+  "2m": {
+    "name": "2 Metres",
+    "range": "144.000 - 146.000 MHz",
+    "status": "Secondary",
+    "calling_frequency": "145.500 MHz (FM)",
+    "modes": "FM, SSB, CW, Digital",
+    "notes": "Most popular VHF band in the UK. Repeaters use 600kHz split. SSB calling on 144.300 MHz."
+  },
+  "70cm": {
+    "name": "70 Centimetres",
+    "range": "430.000 - 440.000 MHz",
+    "status": "Secondary",
+    "calling_frequency": "433.500 MHz (FM)",
+    "modes": "FM, SSB, CW, Digital",
+    "notes": "Popular UHF band. Repeaters use 1.6MHz split. Foundation limit applies."
+  },
+  "6m": {
+    "name": "6 Metres",
+    "range": "50.000 - 52.000 MHz",
+    "status": "Secondary",
+    "calling_frequency": "50.110 MHz (SSB), 51.500 MHz (FM)",
+    "modes": "FM, SSB, CW",
+    "notes": "Known as the magic band due to sporadic E propagation."
+  },
+  "4m": {
+    "name": "4 Metres",
+    "range": "70.000 - 70.500 MHz",
+    "status": "Secondary",
+    "calling_frequency": "70.450 MHz (FM)",
+    "modes": "FM, SSB, CW",
+    "notes": "UK only allocation. Not available in most other countries."
+  },
+  "40m": {
+    "name": "40 Metres",
+    "range": "7.000 - 7.200 MHz",
+    "status": "Primary",
+    "calling_frequency": "7.090 MHz (SSB)",
+    "modes": "SSB, CW, Digital",
+    "notes": "Excellent for medium distance HF comms, especially at night."
+  },
+  "20m": {
+    "name": "20 Metres",
+    "range": "14.000 - 14.350 MHz",
+    "status": "Primary",
+    "calling_frequency": "14.225 MHz (SSB)",
+    "modes": "SSB, CW, Digital",
+    "notes": "Most popular HF DX band. Good worldwide propagation during the day."
+  },
+  "80m": {
+    "name": "80 Metres",
+    "range": "3.500 - 3.800 MHz",
+    "status": "Primary (non-interference outside UK)",
+    "calling_frequency": "3.760 MHz (SSB)",
+    "modes": "SSB, CW, Digital",
+    "notes": "Good for UK and European contacts. Heavy QRM in evenings."
+  },
+  "160m": {
+    "name": "160 Metres",
+    "range": "1.810 - 2.000 MHz",
+    "status": "Primary (non-interference outside UK)",
+    "calling_frequency": "1.900 MHz (SSB)",
+    "modes": "SSB, CW",
+    "notes": "The top band. Difficult propagation, best at night in winter."
+  },
+  "10m": {
+    "name": "10 Metres",
+    "range": "28.000 - 29.700 MHz",
+    "status": "Primary",
+    "calling_frequency": "28.500 MHz (SSB)",
+    "modes": "SSB, CW, FM, Digital",
+    "notes": "Excellent DX when solar cycle is high. Foundation licence permitted."
+  },
+  "15m": {
+    "name": "15 Metres",
+    "range": "21.000 - 21.450 MHz",
+    "status": "Primary",
+    "calling_frequency": "21.285 MHz (SSB)",
+    "modes": "SSB, CW, Digital",
+    "notes": "Good DX band, best during daylight hours."
+  },
+  "17m": {
+    "name": "17 Metres",
+    "range": "18.068 - 18.168 MHz",
+    "status": "Primary",
+    "calling_frequency": "18.130 MHz (SSB)",
+    "modes": "SSB, CW, Digital",
+    "notes": "WARC band — no contests permitted."
+  },
+  "12m": {
+    "name": "12 Metres",
+    "range": "24.890 - 24.990 MHz",
+    "status": "Primary",
+    "calling_frequency": "24.940 MHz (SSB)",
+    "modes": "SSB, CW, Digital",
+    "notes": "WARC band — no contests permitted."
+  },
+  "30m": {
+    "name": "30 Metres",
+    "range": "10.100 - 10.150 MHz",
+    "status": "Secondary",
+    "calling_frequency": "10.130 MHz (Digital)",
+    "modes": "CW, Digital (no SSB)",
+    "notes": "WARC band — no contests permitted. Narrow allocation, CW and digital only."
+  },
+  "23cm": {
+    "name": "23 Centimetres",
+    "range": "1240 - 1325 MHz",
+    "status": "Secondary",
+    "calling_frequency": "1296.500 MHz (FM)",
+    "modes": "FM, SSB, CW, Digital",
+    "notes": "Microwave band. Good for local contacts and satellite work."
+  }
+}

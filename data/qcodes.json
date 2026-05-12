@@ -1,0 +1,102 @@
+{
+  "QRM": {
+    "meaning": "I am being interfered with",
+    "question": "Are you being interfered with?",
+    "notes": "Refers to man-made interference from other stations."
+  },
+  "QRN": {
+    "meaning": "I am troubled by static noise",
+    "question": "Are you troubled by static noise?",
+    "notes": "Refers to natural static, e.g. from thunderstorms."
+  },
+  "QRO": {
+    "meaning": "Increase transmitter power",
+    "question": "Shall I increase transmitter power?",
+    "notes": "Opposite of QRP."
+  },
+  "QRP": {
+    "meaning": "Reduce transmitter power",
+    "question": "Shall I reduce transmitter power?",
+    "notes": "Also used to describe low power operation (typically 5W or less)."
+  },
+  "QRQ": {
+    "meaning": "Send faster",
+    "question": "Shall I send faster?",
+    "notes": "Used in CW (Morse) operation."
+  },
+  "QRS": {
+    "meaning": "Send more slowly",
+    "question": "Shall I send more slowly?",
+    "notes": "Used in CW (Morse) operation."
+  },
+  "QRT": {
+    "meaning": "Stop sending / closing down",
+    "question": "Shall I stop sending?",
+    "notes": "Used when a station is going off air."
+  },
+  "QRV": {
+    "meaning": "I am ready",
+    "question": "Are you ready?",
+    "notes": "Used to indicate readiness to receive transmissions."
+  },
+  "QRZ": {
+    "meaning": "Who is calling me?",
+    "question": "Who is calling me?",
+    "notes": "Also the name of a popular amateur radio callsign lookup website."
+  },
+  "QSB": {
+    "meaning": "Your signals are fading",
+    "question": "Are my signals fading?",
+    "notes": "Fading is common on HF due to ionospheric changes."
+  },
+  "QSL": {
+    "meaning": "I acknowledge receipt",
+    "question": "Can you acknowledge receipt?",
+    "notes": "Also refers to QSL cards — confirmation cards sent between operators."
+  },
+  "QSO": {
+    "meaning": "I can communicate with ... direct",
+    "question": "Can you communicate with ... direct?",
+    "notes": "A QSO is a two-way amateur radio contact."
+  },
+  "QSY": {
+    "meaning": "Change to another frequency",
+    "question": "Shall I change to another frequency?",
+    "notes": "Used to move off a calling frequency after making contact."
+  },
+  "QTH": {
+    "meaning": "My location is ...",
+    "question": "What is your location?",
+    "notes": "Often given as a town, Maidenhead locator, or grid square."
+  },
+  "QSX": {
+    "meaning": "I am listening on ... kHz",
+    "question": "Will you listen on ... kHz?",
+    "notes": "Used when a station is listening on a different frequency to transmitting."
+  },
+  "QRX": {
+    "meaning": "Wait / I will call you again at ...",
+    "question": "Shall I standby?",
+    "notes": "Used to ask a station to wait before transmitting."
+  },
+  "QTR": {
+    "meaning": "The exact time is ...",
+    "question": "What is the exact time?",
+    "notes": "Used to give or request the current time."
+  },
+  "QSP": {
+    "meaning": "I will relay to ...",
+    "question": "Will you relay to ...?",
+    "notes": "Used when passing a message through an intermediary station."
+  },
+  "QRK": {
+    "meaning": "Your signals are readable",
+    "question": "What is the readability of my signals?",
+    "notes": "Part of the RST reporting system — R stands for readability (1-5)."
+  },
+  "QSA": {
+    "meaning": "Your signals are strong",
+    "question": "What is the strength of my signals?",
+    "notes": "Part of the RST reporting system — S stands for signal strength (1-9)."
+  }
+}

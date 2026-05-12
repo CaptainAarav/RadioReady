@@ -25,7 +25,7 @@ class UserCommands(commands.Cog):
         progressBar = ("█" * filled) + ("░" * (20 - filled))
         next_rank_text = "you have reached the highest rank!" if remaining == 0 else f"you have to do {remaining} more to get to the next rank!"
         
-        description = f"\n\n Quizzes Done: **{user.total_quizzes}** \n\n Correct Answers: **{user.correct_answers}** \n\n Decibels: **{user.db_points}** \n\n Rank: **{rank}**, {next_rank_text} \n\n {progressBar} {progress}%"
+        description = f"\n\n Callsign: **{user.callsign}** \n\n Bio: **{user.bio}** \n\n Quizzes Done: **{user.total_quizzes}** \n\n Correct Answers: **{user.correct_answers}** \n\n Decibels: **{user.db_points}** \n\n Rank: **{rank}**, {next_rank_text} \n\n {progressBar} {progress}%"
         
         #epsteins favorite number
         #00685
@@ -55,7 +55,7 @@ class UserCommands(commands.Cog):
         progressBar = ("█" * filled) + ("░" * (20 - filled))
         next_rank_text = "they have reached the highest rank!" if remaining == 0 else f"they have to do {remaining} more to get to the next rank!"
         
-        description = f"\n\n Quizzes Done: **{user.total_quizzes}** \n\n Correct Answers: **{user.correct_answers}** \n\n Decibels: **{user.db_points}** \n\n Rank: **{rank}**, {next_rank_text} \n\n {progressBar} {progress}%"
+        description = f"\n\n Callsign: **{user.callsign}** \n\n Bio: **{user.bio}** \n\n Quizzes Done: **{user.total_quizzes}** \n\n Correct Answers: **{user.correct_answers}** \n\n Decibels: **{user.db_points}** \n\n Rank: **{rank}**, {next_rank_text} \n\n {progressBar} {progress}%"
         
         embed = disnake.Embed(
 			title=f"**📊 Stats for {other_person.name}**",
@@ -82,7 +82,7 @@ class UserCommands(commands.Cog):
         progressBar = ("█" * filled) + ("░" * (20 - filled))
         next_rank_text = "they have reached the highest rank!" if remaining == 0 else f"they have to do {remaining} more to get to the next rank!"
         
-        description = f"\n\n Quizzes Done: **{user.total_quizzes}** \n\n Correct Answers: **{user.correct_answers}** \n\n Decibels: **{user.db_points}** \n\n Rank: **{rank}**, {next_rank_text} \n\n {progressBar} {progress}%"
+        description = f"\n\n Callsign: **{user.callsign}** \n\n Bio: **{user.bio}** \n\n Quizzes Done: **{user.total_quizzes}** \n\n Correct Answers: **{user.correct_answers}** \n\n Decibels: **{user.db_points}** \n\n Rank: **{rank}**, {next_rank_text} \n\n {progressBar} {progress}%"
         
         embed = disnake.Embed(
 			title=f"**📊 Stats for {other_person.name}**",
@@ -185,6 +185,33 @@ class UserCommands(commands.Cog):
         )
         
         embed.set_footer(text=f"Data latest from {now.strftime("%d/%m/%Y %H:%M")}")
+        
+        await inter.response.send_message(embed=embed)
+    
+    @commands.slash_command(name="update_stats", description="Update your user callsign and bio.")
+    async def update_stats(self, inter: disnake.ApplicationCommandInteraction, callsign: str = commands.Param(default="No callsign set", description="Your amateur radio callsign e.g. M7NBO"), description: str = commands.Param(default="No bio set", description="A short description about yourself!")):
+        user, _ = await User.get_or_create(discord_id = inter.author.id)
+        now = datetime.now()
+        desc = ""
+        
+        user.callsign = callsign
+        user.bio = description
+        await user.save()
+        
+        desc += f"Callsign: **{callsign}** \n\n Bio: **{description}**"
+        
+        embed = disnake.Embed(
+            title=f"**Updated Stats for {inter.author.name}**",
+            description=desc,
+            color=disnake.Color.green()
+        )
+        
+        embed.set_author(
+            name="RadioReady",
+            url="https://github.com/CaptainAarav/RadioReady"
+        )
+        
+        embed.set_footer(text=f"Updated stats at {now.strftime("%d/%m/%Y %H:%M")}")
         
         await inter.response.send_message(embed=embed)
             
