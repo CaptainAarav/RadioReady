@@ -100,7 +100,7 @@ class UserCommands(commands.Cog):
         await inter.response.send_message(embed=embed)
         
     @commands.slash_command(name="give_decibels", description="Give someone else some of your decibels.")
-    async def give(self, inter: disnake.ApplicationCommandInteraction, amount: int, other_person: disnake.User):
+    async def give_decibels(self, inter: disnake.ApplicationCommandInteraction, amount: int, other_person: disnake.User):
         now = datetime.now()
         user, _ = await User.get_or_create(discord_id = inter.author.id)
         other_user, _ = await User.get_or_create(discord_id = other_person.id)
@@ -154,9 +154,40 @@ class UserCommands(commands.Cog):
     @commands.slash_command(name="leaderboard", description="See top 5 people with decibels.")
     async def leaderboard(self, inter: disnake.ApplicationCommandInteraction):
         now = datetime.now()
-        top_five = User.all().order_by("-db_points").limit(5)
-        print(top_five)
-        await inter.response.send_message(top_five)
+        top_five = await User.all().order_by("-db_points").limit(5)
+        desc = ""
+        
+        for i, user in enumerate(top_five):
+            discord_user = await self.bot.fetch_user(user.discord_id)
+            place = i + 1
+            emoji = ""
+            
+            if place == 1:
+                emoji = "🥇"
+            elif place == 2:
+                emoji = "🥈"
+            elif place == 3:
+                emoji = "🥉"
+            else:
+                emoji = ""
+                
+            desc += f"**{emoji}{place}. {discord_user.name} with {user.db_points} decibels!** \n\n"
+        
+        embed = disnake.Embed(
+            title="**Leaderboard**",
+            description=desc,
+            color=disnake.Color.blurple()
+        )
+        
+        embed.set_author(
+            name="RadioReady",
+            url="https://github.com/CaptainAarav/RadioReady"
+        )
+        
+        embed.set_footer(text=f"Data latest from {now.strftime("%d/%m/%Y %H:%M")}")
+        
+        await inter.response.send_message(embed=embed)
+            
         
 def setup(bot):
     bot.add_cog(UserCommands(bot))
