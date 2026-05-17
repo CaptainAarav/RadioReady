@@ -79,7 +79,8 @@ ham-radio-bot/
 
 ## Question Bank
 
-All questions are taken from official RSGB Foundation mock exam papers for syllabus V1.6, which came into effect on 1 September 2024. Questions that require diagrams or images have been excluded as they cannot be represented in text form.
+All questions are taken from official RSGB Foundation mock exam papers for syllabus V1.6, which came into effect on 1 September 2024. Questions that require diagrams or images are also included.
+Again I am planning to add questons from intermediate and full past papers in the future.
 
 Categories covered:
 
