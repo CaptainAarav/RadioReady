@@ -81,15 +81,15 @@ class Quiz(commands.Cog):
 
             if i == 0:
                 if file:
-                    await inter.response.send_message(embed=embed, view=view, file=file)
+                    await inter.response.send_message(embed=embed, view=view, file=file, ephemeral=True)
                 else:
-                    await inter.response.send_message(embed=embed, view=view)
+                    await inter.response.send_message(embed=embed, view=view, ephemeral=True)
                 view.message = await inter.original_message()
             else:
                 if file:
-                    view.message = await inter.followup.send(embed=embed, view=view, file=file)
+                    view.message = await inter.followup.send(embed=embed, view=view, file=file, ephemeral=True)
                 else:
-                    view.message = await inter.followup.send(embed=embed, view=view)
+                    view.message = await inter.followup.send(embed=embed, view=view, ephemeral=True)
 
             await view.wait()
             total_score += view.score
@@ -101,7 +101,9 @@ class Quiz(commands.Cog):
             
         passed = total_score >= number_of_questions * 0.73
 
-        desc = f"You scored **{total_score}/{number_of_questions}** You got {"**100 Decibels!**" if passed else ""}\n\n"
+        bonus = "**You got 100 Decibels!**" if passed else ""
+        desc = f"You scored **{total_score}/{number_of_questions}** {bonus}\n\n"
+
         for r in results:
             emoji = "✅" if r["correct"] else "❌"
             desc += f"{emoji} {r['question']['text'][:60]}...\n"
