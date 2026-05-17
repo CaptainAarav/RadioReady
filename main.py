@@ -8,7 +8,7 @@ from tortoise import Tortoise
 load_dotenv()
 
 TOKEN = os.getenv("TOKEN")
-bot = commands.InteractionBot(test_guilds=[1500567010734772316])
+bot = commands.InteractionBot(test_guilds=[1500567010734772316, 1505669040881012988])
 
 @bot.event
 async def on_ready():
