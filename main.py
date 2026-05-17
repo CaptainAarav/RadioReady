@@ -25,5 +25,6 @@ async def ping(inter: disnake.ApplicationCommandInteraction):
  
 bot.load_extension("cogs.quiz")
 bot.load_extension("cogs.user")
+bot.load_extension("cogs.bandplan")
 
 bot.run(TOKEN)
