@@ -1,6 +1,7 @@
 # RadioReady
 
 A Discord bot to help you study for your UK Amateur Radio Foundation licence exam.
+I am planning to eventually add question for intermediate and full licence exams.
 
 Quiz yourself on band plans, licence conditions, EMC, propagation, safety, and more — all based on the official RSGB syllabus V1.6.
 
@@ -9,17 +10,20 @@ Quiz yourself on band plans, licence conditions, EMC, propagation, safety, and m
 ## Features
 
 - `/quiz` — Take a quiz with a configurable number of questions, answered via interactive buttons
-- `/ping` — Check the bot's latency
+- `/bandplan_info` - Lets you view the info the selected bandplan
+- `/qcode_info` - Lets you view the info the selected Q-code
+- `/help` - Displays a list of commands and their usage
+- `/leaderboard` - Displays the top 10 players and their scores
+- `/my_stats` - Displays the number of questions answered and the total score
+- `/ping` - Displays the bot's latency
 - Questions sourced directly from official RSGB Foundation mock exam papers (Syllabus V1.6, September 2024)
-- Score tracking and leaderboard *(coming soon)*
-- Q-code and band plan lookup commands *(coming soon)*
-
+- Score tracking and leaderboard
 ---
 
 ## Tech Stack
 
 - Python 3.13-slim(we use slim so that you don't have to use the full python image when building in docker)
-- [disnake](https://docs.disnake.dev/) — Discord API wrapper
+- [disnake](https://docs.disnake.dev/) library
 - Docker + Docker Compose
 - Hosted on a Raspberry Pi 4B
 
@@ -106,4 +110,4 @@ MIT
 
 ---
 
-> Built by [Aarav Sahni](https://github.com/CaptainAarav) — M7 (pending)
+> Built by [Aarav Sahni](https://github.com/CaptainAarav) — M7NBO
