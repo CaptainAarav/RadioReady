@@ -4,6 +4,7 @@ import json
 import random
 from models import User
 
+
 class QuizView(disnake.ui.View):
     def __init__(self, question: dict):
         super().__init__(timeout=30)
@@ -43,15 +44,44 @@ class QuizView(disnake.ui.View):
         self.stop()
 
 
+class SubmitView(disnake.ui.View):
+    def __init__(self):
+        super().__init__(timeout=60)
+        self.submit = None
+
+    @disnake.ui.button(label="✅ Submit to Leaderboard", style=disnake.ButtonStyle.success)
+    async def submit_yes(self, button: disnake.ui.Button, inter: disnake.MessageInteraction):
+        self.submit = True
+        await inter.response.defer()
+        self.stop()
+
+    @disnake.ui.button(label="❌ Keep Private", style=disnake.ButtonStyle.danger)
+    async def submit_no(self, button: disnake.ui.Button, inter: disnake.MessageInteraction):
+        self.submit = False
+        await inter.response.defer()
+        self.stop()
+
+
 class Quiz(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
         with open("data/questions.json", "r") as f:
             self.questions = json.load(f)
 
-    @commands.slash_command(name="quiz", description="Take a quiz and test your knowledge and collect points! PS: You have 30s for each question.")
+    @commands.slash_command(name="quiz", description="Take a quiz via DM and test your knowledge! PS: You have 30s for each question.")
     async def quiz(self, inter: disnake.ApplicationCommandInteraction, number_of_questions: int = 5):
-        user, _ = await User.get_or_create(discord_id = inter.author.id)
+        try:
+            await inter.author.send("📻 **RadioReady Quiz Starting!** Get ready for your first question...")
+        except disnake.Forbidden:
+            await inter.response.send_message(
+                "❌ I couldn't DM you! Please enable DMs from server members in your Privacy Settings.",
+                ephemeral=True
+            )
+            return
+
+        await inter.response.send_message("📬 Check your DMs! Your quiz has started.", ephemeral=True)
+
+        user, _ = await User.get_or_create(discord_id=inter.author.id)
         total_score = 0
         results = []
 
@@ -61,7 +91,7 @@ class Quiz(commands.Cog):
             description = f"{question['text']}\n\n🇦  {options['A']}\n\n🇧  {options['B']}\n\n🇨  {options['C']}\n\n🇩  {options['D']}"
 
             embed = disnake.Embed(
-                title=f"Question {i + 1}",
+                title=f"Question {i + 1} of {number_of_questions}",
                 description=description,
                 color=disnake.Color.blurple()
             )
@@ -71,25 +101,18 @@ class Quiz(commands.Cog):
                 url="https://github.com/CaptainAarav/RadioReady",
             )
 
-            embed.set_footer(text="SYLLABUS: V1.6")
+            embed.set_footer(text="SYLLABUS: V1.6 | You have 30 seconds to answer")
 
             view = QuizView(question)
-            file = disnake.File(question["image"], filename="question.png") if "image" in question else None
 
             if "image" in question:
+                file = disnake.File(question["image"], filename="question.png")
                 embed.set_image(url="attachment://question.png")
-
-            if i == 0:
-                if file:
-                    await inter.response.send_message(embed=embed, view=view, file=file, ephemeral=True)
-                else:
-                    await inter.response.send_message(embed=embed, view=view, ephemeral=True)
-                view.message = await inter.original_message()
+                dm_message = await inter.author.send(embed=embed, view=view, file=file)
             else:
-                if file:
-                    view.message = await inter.followup.send(embed=embed, view=view, file=file, ephemeral=True)
-                else:
-                    view.message = await inter.followup.send(embed=embed, view=view, ephemeral=True)
+                dm_message = await inter.author.send(embed=embed, view=view)
+
+            view.message = dm_message
 
             await view.wait()
             total_score += view.score
@@ -98,10 +121,9 @@ class Quiz(commands.Cog):
                 "chosen": view.chosen,
                 "correct": view.score == 1
             })
-            
-        passed = total_score >= number_of_questions * 0.73
 
-        bonus = "**You got 100 Decibels!**" if passed else ""
+        passed = total_score >= number_of_questions * 0.73
+        bonus = "**You earned 100 Decibels!**" if passed else ""
         desc = f"You scored **{total_score}/{number_of_questions}** {bonus}\n\n"
 
         for r in results:
@@ -111,18 +133,11 @@ class Quiz(commands.Cog):
             if not r["correct"]:
                 desc += f"　✔️ Correct: **{r['question']['answer']}**"
             desc += "\n\n"
-            
-        user.correct_answers += total_score
-        user.total_quizzes += 1
-        if passed:
-            user.db_points += 100
-        
-        await user.save()
 
         summary_embed = disnake.Embed(
-            title = f"📊 {inter.author.display_name}'s Results",
-            description = desc,
-            color = disnake.Color.green() if total_score >= number_of_questions * 0.73 else disnake.Color.red()
+            title=f"📊 {inter.author.display_name}'s Results",
+            description=desc,
+            color=disnake.Color.green() if passed else disnake.Color.red()
         )
 
         summary_embed.set_author(
@@ -132,7 +147,41 @@ class Quiz(commands.Cog):
 
         summary_embed.set_footer(text="SYLLABUS: V1.6")
 
-        await inter.followup.send(embed=summary_embed)
+        submit_view = SubmitView()
+        await inter.author.send(
+            content="Would you like to submit your results to the leaderboard?",
+            embed=summary_embed,
+            view=submit_view
+        )
+
+        await submit_view.wait()
+
+        if submit_view.submit:
+            user.correct_answers += total_score
+            user.total_quizzes += 1
+            if passed:
+                user.db_points += 100
+            await user.save()
+
+            await inter.author.send("✅ Your results have been submitted to the leaderboard!")
+
+            public_embed = disnake.Embed(
+                title=f"📊 {inter.author.display_name} just completed a quiz!",
+                description=f"They scored **{total_score}/{number_of_questions}**! {bonus}",
+                color=disnake.Color.green() if passed else disnake.Color.red()
+            )
+
+            public_embed.set_author(
+                name="RadioReady",
+                url="https://github.com/CaptainAarav/RadioReady",
+            )
+
+            public_embed.set_footer(text="SYLLABUS: V1.6")
+
+            await inter.channel.send(embed=public_embed)
+        else:
+            await inter.author.send("👍 No worries! Your results have been kept private.")
+
 
 def setup(bot):
     bot.add_cog(Quiz(bot))
