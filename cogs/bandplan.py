@@ -3,14 +3,15 @@ from disnake.ext import commands
 from datetime import datetime
 import json
 
-class Bandplan(commands.Cog):
+class BandPlan(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
         with open("data/bandplan.json", "r") as f:
             self.bandplans = json.load(f)
             
     @commands.slash_command(name="view_bandplan", description="View info on a specific bandplan.")
-    async def view_bandplan(self, inter: disnake.ApplicationCommandInteraction, selected_bandplan: str = ):
+    async def view_bandplan(self, inter: disnake.ApplicationCommandInteraction, selected_bandplan: str = commands.Param(default="No bandplan selected", description="The bandplan you want to view.")):
+        inter.response.send_message(self.bandplans[selected_bandplan])
         
             
 def setup(bot):
