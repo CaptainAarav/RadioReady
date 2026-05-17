@@ -71,7 +71,7 @@ class Quiz(commands.Cog):
     @commands.slash_command(name="quiz", description="Take a quiz via DM and test your knowledge! PS: You have 30s for each question.")
     async def quiz(self, inter: disnake.ApplicationCommandInteraction, number_of_questions: int = 5):
         try:
-            await inter.author.send("📻 **RadioReady Quiz Starting!** Get ready for your first question...")
+            await inter.author.send("📻 **Quiz Starting!** Get ready for your first question...")
         except disnake.Forbidden:
             await inter.response.send_message(
                 "❌ I couldn't DM you! Please enable DMs from server members in your Privacy Settings.",
@@ -164,21 +164,6 @@ class Quiz(commands.Cog):
             await user.save()
 
             await inter.author.send("✅ Your results have been submitted to the leaderboard!")
-
-            public_embed = disnake.Embed(
-                title=f"📊 {inter.author.display_name} just completed a quiz!",
-                description=f"They scored **{total_score}/{number_of_questions}**! {bonus}",
-                color=disnake.Color.green() if passed else disnake.Color.red()
-            )
-
-            public_embed.set_author(
-                name="RadioReady",
-                url="https://github.com/CaptainAarav/RadioReady",
-            )
-
-            public_embed.set_footer(text="SYLLABUS: V1.6")
-
-            await inter.channel.send(embed=public_embed)
         else:
             await inter.author.send("👍 No worries! Your results have been kept private.")
 
