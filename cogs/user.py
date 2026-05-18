@@ -43,7 +43,7 @@ class UserCommands(commands.Cog):
         
         embed.set_footer(text=f"Stats based of data at {now.strftime("%d/%m/%Y %H:%M")}")
         
-        await inter.response.send_message(embed=embed, ephermeral=True)
+        await inter.response.send_message(embed=embed, ephemeral=True)
         
     @commands.slash_command(name="search_stats", description="Search another persons stats up.")
     async def search_stats(self, inter: disnake.ApplicationCommandInteraction, other_person: disnake.User):
@@ -213,7 +213,7 @@ class UserCommands(commands.Cog):
         
         embed.set_footer(text=f"Updated stats at {now.strftime("%d/%m/%Y %H:%M")}")
         
-        await inter.response.send_message(embed=embed, ephermeral=True)
+        await inter.response.send_message(embed=embed, ephemeral=True)
             
         
 def setup(bot):
