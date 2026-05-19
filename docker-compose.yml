@@ -4,3 +4,5 @@ services:
     restart: unless-stopped
     env_file:
       - .env
+    volumes:
+      - ./db.sqlite3:/app/db.sqlite3
