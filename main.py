@@ -16,6 +16,11 @@ bot = commands.InteractionBot(intents=disnake.Intents.default(), test_guilds=tes
 async def on_ready():
     print("Bot is ready!")
 
+@bot.event
+async def on_slash_command_error(inter: disnake.ApplicationCommandInteraction, error: Exception):
+	await inter.response.send_message(f"An error occurred: {error}", ephemeral=True)
+	raise error
+
 async def setup_db():
 	await Tortoise.init(
 		db_url="sqlite://db.sqlite3",
@@ -25,7 +30,7 @@ async def setup_db():
 
 bot.loop.create_task(setup_db())
 
-@bot.slash_command(name="ping", description="pings the bot and checks weather it's responding")
+@bot.slash_command(name="ping", description="pings the bot and checks whether it's responding")
 async def ping(inter: disnake.ApplicationCommandInteraction):
 	await inter.response.send_message(f"{inter.author.mention}, Pong!")
  

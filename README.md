@@ -15,6 +15,7 @@ Quiz yourself on band plans, licence conditions, EMC, propagation, safety, and m
 - `/help` - Displays a list of commands and their usage
 - `/leaderboard` - Displays the top 10 players and their scores
 - `/my_stats` - Displays the number of questions answered and the total score
+- `/search_stats` - Displays the number of questions answered and the total score of another user
 - `/ping` - Displays the bot's latency
 - Questions sourced directly from official RSGB Foundation mock exam papers (Syllabus V1.6, September 2024)
 - Score tracking and leaderboard

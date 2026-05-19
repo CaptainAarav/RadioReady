@@ -120,7 +120,7 @@ class UserCommands(commands.Cog):
             
             embed = disnake.Embed(
                 title=f"**Gave {amount} decibels to {other_person.name}**",
-                description=f"You succesfully gave {amount} to {other_person.name}, you now have **{user.db_points}** decibels remaining",
+                description=f"You successfully gave {amount} to {other_person.name}, you now have **{user.db_points}** decibels remaining",
                 color=disnake.Color.green()
             )
             
@@ -135,7 +135,7 @@ class UserCommands(commands.Cog):
         else:
             embed = disnake.Embed(
                 title=f"**Failed to give {amount} decibels to {other_person.name}**",
-                description=f"Transfer of {amount} decibels to {other_person.name} did not go through, this is because you do not have enough balance. \n You have {user_balance} decibals which is less than {amount} decibals",
+                description=f"Transfer of {amount} decibels to {other_person.name} did not go through, this is because you do not have enough balance. \n You have {user_balance} decibels which is less than {amount} decibels",
                 color=disnake.Color.red()
             )
             
@@ -155,7 +155,11 @@ class UserCommands(commands.Cog):
         desc = ""
         
         for i, user in enumerate(top_five):
-            discord_user = await self.bot.fetch_user(user.discord_id)
+            try:
+                discord_user = await self.bot.fetch_user(user.discord_id)
+                username = discord_user.name
+            except disnake.NotFound:
+                username = "Unknown User"
             place = i + 1
             emoji = ""
             
@@ -168,7 +172,7 @@ class UserCommands(commands.Cog):
             else:
                 emoji = ""
                 
-            desc += f"**{emoji}{place}. {discord_user.name} with {user.db_points} decibels!** \n\n"
+            desc += f"**{emoji}{place}. {username} with {user.db_points} decibels!**\n\n"
         
         embed = disnake.Embed(
             title="**Leaderboard**",
@@ -183,7 +187,7 @@ class UserCommands(commands.Cog):
         
         embed.set_footer(text=f"Data latest from {now.strftime("%d/%m/%Y %H:%M")}")
         
-        await inter.response.send_message(embed=embed)
+        await inter.response.send_message(embed=embed, allowed_mentions=disnake.AllowedMentions.none())
     
     @commands.slash_command(name="update_stats", description="Update your user callsign and bio.")
     async def update_stats(self, inter: disnake.ApplicationCommandInteraction, callsign: str = commands.Param(default="No callsign set", description="Your amateur radio callsign e.g. M7NBO"), description: str = commands.Param(default="No bio set", description="A short description about yourself!")):
@@ -211,6 +215,15 @@ class UserCommands(commands.Cog):
         embed.set_footer(text=f"Updated stats at {now.strftime("%d/%m/%Y %H:%M")}")
         
         await inter.response.send_message(embed=embed, ephemeral=True, allowed_mentions=disnake.AllowedMentions.none())
+
+    @commands.slash_command(name="forget_me", description="Delete all your data from RadioReady.")
+    async def forget_me(self, inter: disnake.ApplicationCommandInteraction):
+        user = await User.get_or_none(discord_id=inter.author.id)
+        if user is None:
+            await inter.response.send_message("You don't have any data stored!", ephemeral=True)
+            return
+        await user.delete()
+        await inter.response.send_message("✅ All your data has been deleted from RadioReady.", ephemeral=True)
             
         
 def setup(bot):
