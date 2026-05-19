@@ -8,7 +8,9 @@ from tortoise import Tortoise
 load_dotenv()
 
 TOKEN = os.getenv("TOKEN")
-bot = commands.InteractionBot(test_guilds=[1500567010734772316, 1505669040881012988, 1454532912811737272, 1506030901589577788])
+DEV_MODE = os.getenv("DEV_MODE") == "true"
+test_guilds = [1505669040881012988] if DEV_MODE else None
+bot = commands.InteractionBot(intents=disnake.Intents.default(), test_guilds=test_guilds)
 
 @bot.event
 async def on_ready():
