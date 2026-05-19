@@ -40,7 +40,7 @@ class UserCommands(commands.Cog):
         
         embed.set_footer(text=f"Stats based of data at {now.strftime("%d/%m/%Y %H:%M")}")
         
-        await inter.response.send_message(embed=embed, ephemeral=True)
+        await inter.response.send_message(embed=embed, ephemeral=True, allowed_mentions=disnake.AllowedMentions.none())
         
     @commands.slash_command(name="search_stats", description="Search another persons stats up.")
     async def search_stats(self, inter: disnake.ApplicationCommandInteraction, other_person: disnake.User):
@@ -67,7 +67,7 @@ class UserCommands(commands.Cog):
         
         embed.set_footer(text=f"Stats based of data at {now.strftime("%d/%m/%Y %H:%M")}")
         
-        await inter.response.send_message(embed=embed)
+        await inter.response.send_message(embed=embed, allowed_mentions=disnake.AllowedMentions.none())
         
     @commands.user_command(name="see_stats")
     async def see_stats(self, inter: disnake.ApplicationCommandInteraction, other_person: disnake.User):
@@ -94,7 +94,7 @@ class UserCommands(commands.Cog):
         
         embed.set_footer(text=f"Stats based of data at {now.strftime("%d/%m/%Y %H:%M")}")
         
-        await inter.response.send_message(embed=embed)
+        await inter.response.send_message(embed=embed, allowed_mentions=disnake.AllowedMentions.none())
         
     @commands.slash_command(name="give_decibels", description="Give someone else some of your decibels.")
     async def give_decibels(self, inter: disnake.ApplicationCommandInteraction, amount: int, other_person: disnake.User):
@@ -210,7 +210,7 @@ class UserCommands(commands.Cog):
         
         embed.set_footer(text=f"Updated stats at {now.strftime("%d/%m/%Y %H:%M")}")
         
-        await inter.response.send_message(embed=embed, ephemeral=True)
+        await inter.response.send_message(embed=embed, ephemeral=True, allowed_mentions=disnake.AllowedMentions.none())
             
         
 def setup(bot):
