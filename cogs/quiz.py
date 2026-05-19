@@ -69,17 +69,16 @@ class Quiz(commands.Cog):
             self.questions = json.load(f)
 
     @commands.slash_command(name="quiz", description="Take a quiz via DM and test your knowledge! PS: You have 30s for each question.")
-    async def quiz(self, inter: disnake.ApplicationCommandInteraction, number_of_questions: int = 5):
+    async def quiz(self, inter: disnake.ApplicationCommandInteraction, number_of_questions: int = commands.Param(default=5, description="How many questions do you want?", gt=0, lt=26)):
+        await inter.response.defer(ephemeral=True)
+
         try:
             await inter.author.send("📻 **Quiz Starting!** Get ready for your first question...")
         except disnake.Forbidden:
-            await inter.response.send_message(
-                "❌ I couldn't DM you! Please enable DMs from server members in your Privacy Settings.",
-                ephemeral=True
-            )
+            await inter.edit_original_response(content="❌ I couldn't DM you! Please enable DMs from server members.")
             return
 
-        await inter.response.send_message("📬 Check your DMs! Your quiz has started.", ephemeral=True)
+        await inter.edit_original_response(content="📬 Check your DMs! Your quiz has started.")
 
         user, _ = await User.get_or_create(discord_id=inter.author.id)
         total_score = 0

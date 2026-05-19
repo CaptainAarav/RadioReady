@@ -26,10 +26,7 @@ class UserCommands(commands.Cog):
         next_rank_text = "you have reached the highest rank!" if remaining == 0 else f"you have to do {remaining} more to get to the next rank!"
         
         description = f"\n\n Callsign: **{user.callsign}** \n\n Bio: **{user.bio}** \n\n Quizzes Done: **{user.total_quizzes}** \n\n Correct Answers: **{user.correct_answers}** \n\n Decibels: **{user.db_points}** \n\n Rank: **{rank}**, {next_rank_text} \n\n {progressBar} {progress}%"
-        
-        #epsteins favorite number
-        #00685
-        
+
         embed = disnake.Embed(
 			title=f"**📊 Your Stats {inter.author}**",
 			description=description,
