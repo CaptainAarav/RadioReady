@@ -12,12 +12,16 @@ bot = commands.InteractionBot(test_guilds=[1500567010734772316, 1505669040881012
 
 @bot.event
 async def on_ready():
-    await Tortoise.init(
+    print("Bot is ready!")
+
+async def setup_db():
+	await Tortoise.init(
 		db_url="sqlite://db.sqlite3",
 		modules={"models": ["models"]}
 	)
-    await Tortoise.generate_schemas()
-    print("Bot is ready!")
+	await Tortoise.generate_schemas()
+
+bot.loop.create_task(setup_db())
 
 @bot.slash_command(name="ping", description="pings the bot and checks weather it's responding")
 async def ping(inter: disnake.ApplicationCommandInteraction):
